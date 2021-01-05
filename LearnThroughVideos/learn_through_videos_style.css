@@ -1,0 +1,97 @@
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+}
+
+a{
+    font-family: "Poppins", sans-serif;
+}
+aa {
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: 650;
+    font-style:normal;
+    padding: 20px;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.438) ;
+}
+b {
+    text-decoration: none;
+    font-size: x-large;
+    margin-left: 130px;
+    font-weight: 530; 
+    padding: 20px;
+    border-radius: 100px;
+    background-color: rgb(107, 176, 204);;
+    border: 1px solid rgba(0, 0, 0, 0.438) ;
+}
+c{
+    text-decoration: none;
+    margin-left: 130px;
+    font-size: x-large; 
+    font-weight: 100;
+    padding: 10px;
+    background-color: rgb(228, 19, 116) ;
+    border: 1px solid rgba(0, 0, 0, 0.438) ;
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+
+}
+img{
+    width: 100px;
+}
+
+z{
+    border-radius: 20px;
+      border: 2px solid #000000;
+    padding: 9px;
+    width: 200px;
+    height: 150px;
+
+}
+        .nav-area{
+            list-style: none;
+        }
+        .nav-area li{
+            display: inline-block;
+            padding: 0 15px;
+        }
+        .nav-area li a {
+            color: rgb(5, 63, 150);
+            text-transform: uppercase;
+            
+        }
+        .nav-area li a:hover{
+            color: rgb(228, 19, 116);
+            padding: 5px;
+            width: 200px;
+            height: 150px;
+            
+        }
+        header{
+            height: 100px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 30px 70px;
+            background-color: rgb(255, 255, 255);
+            margin-right: 40px;
+        }
+        .logo{
+            margin-right: auto;
+            width: 60px;
+        }
+        y{
+            font-family: "Poppins", sans-serif;
+        }

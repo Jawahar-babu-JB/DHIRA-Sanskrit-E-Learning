@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DHIRA | Fun With Learning</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <script src="../../Ajax/min.js" ></script>
+
+    <!-- jquery for maximum compatibility -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script>
+    /** Simple JavaScript Quiz
+     * version 0.1.0
+     * http://journalism.berkeley.edu
+     * created by: Jeremy Rue @jrue
+     *
+     * Copyright (c) 2013 The Regents of the University of California
+     * Released under the GPL Version 2 license
+     * http://www.opensource.org/licenses/gpl-2.0.php
+     * This program is distributed in the hope that it will be useful, but
+     * WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+     */
+
+    var quiztitle = "Fun With Learning | WORDS-1";
+
+
+var quiz = [
+
+{
+            "question"      :   "Crow (Ka-kha)",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Corvus_caurinus_%28profile%29.jpg/800px-Corvus_caurinus_%28profile%29.jpg",
+            "choices"       :   [
+                                    "काकः",
+                                    "अन्यs",
+                                    "गुरु",
+                                    "अंहु"
+                                ],
+            "correct"       :   "काकः",
+            "explanation"   :   "Answer is काकः",
+        },
+        {
+            "question"      :   "Elephant   [Gaja(Ga-ja)]",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/African_Bush_Elephant.jpg/800px-African_Bush_Elephant.jpg",
+            "choices"       :   [
+                                    "सर्प",
+                                    "वन",
+                                    "मत्स्य",
+                                    "गज"
+                                ],
+            "correct"       :   "गज",
+            "explanation"   :   " Answer is गज",
+        },
+        {
+            "question"      :   "Fish  [Matsya(muts-yuh)]",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Astronotus_ocellatus.jpg/1280px-Astronotus_ocellatus.jpg",
+            "choices"       :   [
+                                    "मत्स्य",
+                                    "सर्प",
+                                    "व्याघ्र",
+                                    "वन"
+                                ],
+            "correct"       :   "मत्स्य",
+            "explanation"   :   "Answer is मत्स्य",
+        },
+        {
+            "question"      :   "Tiger  [vyaghra (vi-A-gra)]",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Siberischer_tiger_de_edit02.jpg/1024px-Siberischer_tiger_de_edit02.jpg",
+            "choices"       :   [
+                                    "गज",
+                                    "व्याघ्र",
+                                    "काकः",
+                                    "वन"
+                                ],
+            "correct"       :   "व्याघ्र",
+            "explanation"   :   " Answer is व्याघ्र",
+        },
+
+
+        {
+            "question"      :   "Leaf  Patra(pa-tra)",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/f/f4/Leaf_1_web.jpg",
+            "choices"       :   [
+                                    "मत्स्य",
+                                    "व्याघ्र",
+                                    "पत्त्र",
+                                    "वन"
+                                ],
+            "correct"       :   "पत्त्र",
+            "explanation"   :   "Answer is पत्त्र",
+        },
+
+        {
+            "question"      :   "Blood  (asr̥j)",
+            "image"         :   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL0Z9jUYK257m-V7ZLT7nSiV3DblbAcDn0ww&usqp=CAU",
+            "choices"       :   [
+                                    "असृज्",
+                                    "पत्त्र",
+                                    "वमति",
+                                    "व्याघ्र"
+                                ],
+            "correct"       :   "असृज्",
+            "explanation"   :   "Answer is असृज्  ",
+        },
+
+        {
+            "question"      :   "Head (siras)",
+            "image"         :   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF6v_zlOIYqvu3LvDtozLruRajZ-55dk4Q3Q&usqp=CAU",
+            "choices"       :   [
+                                    "वमति",
+                                    "शिरस्",
+                                    "उदर",
+                                    "पद"
+                                ],
+            "correct"       :   "शिरस्",
+            "explanation"   :   "Answer is शिरस् ",
+        },
+
+
+        {
+            "question"      :   "Ear (karna)",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Anatomy_of_the_Human_Ear_in_farsi_numbers-edit-1.svg/1024px-Anatomy_of_the_Human_Ear_in_farsi_numbers-edit-1.svg.png",
+            "choices"       :   [
+                                    "कर्ण",
+                                    "पद",
+                                    "वमति",
+                                    "उदर"
+                                ],
+            "correct"       :   "कर्ण",
+            "explanation"   :   "Answer is कर्ण ",
+        },
+
+
+        {
+            "question"      :   "Eye  (aksi)",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Eye_iris.jpg/1280px-Eye_iris.jpg",
+            "choices"       :   [
+                                    "उदर",
+                                    "पद",
+                                    "वमति",
+                                    "अक्षि"
+                                ],
+            "correct"       :   "अक्षि",
+            "explanation"   :   "Answer is अक्षि ",
+        },
+
+        {
+            "question"      :   "Nose  (nasik)",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/3/36/Human-nose.jpg",
+            "choices"       :   [
+                                    "वमति",
+                                    "उदर",
+                                    "नासिक",
+                                    "पद"
+                                ],
+            "correct"       :   "नासिक",
+            "explanation"   :   "Answer is नासिक ",
+        },
+
+        {
+            "question"      :   "Mouth  (mukha)",
+            "image"         :   "https://www.sciencenews.org/wp-content/uploads/2018/07/072418_ti_mouth_feat_free.jpg",
+            "choices"       :   [
+                                    "वमति",
+                                    "मुख",
+                                    "पद",
+                                    "उदर"
+                                ],
+            "correct"       :   "मुख",
+            "explanation"   :   "Answer is मुख",
+        },
+
+        {
+            "question"      :   "Tooth  (dat)",
+            "image"         :   "https://media.istockphoto.com/photos/close-up-of-smiling-womans-mouth-picture-id147206937?k=6&m=147206937&s=612x612&w=0&h=f68jPXql-_nlqHLqOQNlb-zKrVl0y6_zN1WaHTpijgw=",
+            "choices"       :   [
+                                    "दत्/दन्त",
+                                    "पद",
+                                    "वमति",
+                                    "उदर"
+                                ],
+            "correct"       :   "दत्/दन्त",
+            "explanation"   :   "Answer is दत्/दन्त ",
+        },
+
+        {
+            "question"      :   "Tongue  (jihva)",
+            "image"         :   "https://cdn.mos.cms.futurecdn.net/ZbDgR2CYZ36AJP3HbNRPnD-1200-80.jpg",
+            "choices"       :   [
+                                    "पद",
+                                    "उदर",
+                                    "जिह्व/जिह्वा",
+                                    "वमति" 
+                                ],
+            "correct"       :   "जिह्व/जिह्वा",
+            "explanation"   :   "Answer is जिह्व/जिह्वा ",
+        },
+
+        {
+            "question"      :   "Black  (krsna)",
+            "image"         :   "https://static01.nyt.com/images/2020/07/05/pageoneplus/02insider-black/02insider-black-superJumbo.jpg",
+            "choices"       :   [
+                                    "वमति",
+                                    "कृष्ण",
+                                    "वमति",
+                                    "अस्तु"
+                                ],
+            "correct"       :   "कृष्ण",
+            "explanation"   :   "Answer is कृष्ण ",
+        },
+
+        {
+            "question"      :   "Night  (ratri)",
+            "image"         :   "https://vistapointe.net/images/night-3.jpg",
+            "choices"       :   [
+                                    "रात्र",
+                                    "वमति",
+                                    "अस्तु",
+                                    "वमति"
+                                ],
+            "correct"       :   "रात्र",
+            "explanation"   :   "Answer is रात्र",
+        },
+
+        {
+            "question"      :   "Day",
+            "image"         :   "https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/image_nodes/summer-sunset.jpg?itok=2hurkODW",
+            "choices"       :   [
+                                    "वमति",
+                                    "वमति",
+                                    "अस्तु",
+                                    "द्यु"
+                                ],
+            "correct"       :   "द्यु",
+            "explanation"   :   "Answer is द्यु",
+        },
+
+        {
+            "question"      :   "Year  (varsa)",
+            "image"         :   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyNbqd8zclqEimwyrhrmeElhEjwqAXsuRNgg&usqp=CAU",
+            "choices"       :   [
+                                    "वमति",
+                                    "वर्ष",
+                                    "वमति",
+                                    "अस्तु"
+                                ],
+            "correct"       :   "वर्ष",
+            "explanation"   :   "Answer is वर्ष",
+        },
+
+        {
+            "question"      :   "Warm  (tapta)",
+            "image"         :   "https://andrewhenry.ca/2017/wp-content/uploads/2017/12/keep-your-home-warm-this-winter.jpg",
+            "choices"       :   [
+                                    "तप्त",
+                                    "वमति",
+                                    "अस्तु",
+                                    "वमति"
+                                ],
+            "correct"       :   "तप्त",
+            "explanation"   :   "Answer is तप्त",
+        },
+
+        {
+            "question"      :   "Cold  (sita)",
+            "image"         :   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQumOSRYW4dFvS3Ch7jmzy2QGNSAgTh7rntaQ&usqp=CAU",
+            "choices"       :   [
+                                    "वमति",
+                                    "वमति",
+                                    "शीत",
+                                    "अस्तु"
+                                ],
+            "correct"       :   "शीत",
+            "explanation"   :   "Answer is शीत",
+        },
+
+        {
+            "question"      :   "Child  (balaka)",
+            "image"         :   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe34NpZ_BeNB4lEq3TZUMqDtDht372OYlyGw&usqp=CAU",
+            "choices"       :   [
+                                    "अस्तु",
+                                    "बाल",
+                                    "वमति",
+                                    "अस्तु"
+                                ],
+            "correct"       :   "बाल",
+            "explanation"   :   "Answer is बाल",
+        },
+    
+];
+
+    /*** No need to edit below this line ***/
+var currentquestion=0,score=0,submt=true,picked;jQuery(document).ready(function(e){function h(i){return e(document.createElement("div")).text(i).html()}function b(k){if(typeof k!=="undefined"&&e.type(k)=="array"){e("#choice-block").empty();for(var j=0;j<k.length;j++){e(document.createElement("li")).addClass("choice choice-box").attr("data-index",j).text(k[j]).appendTo("#choice-block")}}}function d(){submt=true;e("#explanation").empty();e("#question").text(quiz[currentquestion]["question"]);e("#pager").text("Question "+Number(currentquestion+1)+" of "+quiz.length);if(quiz[currentquestion].hasOwnProperty("image")&&quiz[currentquestion]["image"]!=""){if(e("#question-image").length==0){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"])).insertAfter("#question")}else{e("#question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"]))}}else{e("#question-image").remove()}b(quiz[currentquestion]["choices"]);c()}function f(i){if(quiz[currentquestion]["choices"][i]==quiz[currentquestion]["correct"]){e(".choice").eq(i).css({"background-color":"#50D943"});e("#explanation").html("<strong>Correct!</strong> "+h(quiz[currentquestion]["explanation"]));score++}else{e(".choice").eq(i).css({"background-color":"#D92623"});e("#explanation").html("<strong>Incorrect.</strong> "+h(quiz[currentquestion]["explanation"]))}currentquestion++;e("#submitbutton").html("NEXT QUESTION &raquo;").on("click",function(){if(currentquestion==quiz.length){a()}else{e(this).text("Check Answer").css({color:"#222"}).off("click");d()}})}function c(){e(".choice").on("mouseover",function(){e(this).css({"background-color":"#e1e1e1"})});e(".choice").on("mouseout",function(){e(this).css({"background-color":"#fff"})});e(".choice").on("click",function(){picked=e(this).attr("data-index");e(".choice").removeAttr("style").off("mouseout mouseover");e(this).css({"border-color":"#222","font-weight":700,"background-color":"#c1c1c1"});if(submt){submt=false;e("#submitbutton").css({color:"#000"}).on("click",function(){e(".choice").off("click");e(this).off("click");f(picked)})}})}function a(){e("#explanation").empty();e("#question").empty();e("#choice-block").empty();e("#submitbutton").remove();e("#question").text("You got "+score+" out of "+quiz.length+" correct.");e(document.createElement("h2")).css({"text-align":"center","font-size":"4em"}).text(Math.round(score/quiz.length*100)+"%").insertAfter("#question")}function g(){if(typeof quiztitle!=="undefined"&&e.type(quiztitle)==="string"){e(document.createElement("h1")).text(quiztitle).appendTo("#frame")}else{e(document.createElement("h1")).text("Quiz").appendTo("#frame")}if(typeof quiz!=="undefined"&&e.type(quiz)==="array"){e(document.createElement("p")).addClass("pager").attr("id","pager").text("Question 1 of "+quiz.length).appendTo("#frame");e(document.createElement("h2")).addClass("question").attr("id","question").text(quiz[0]["question"]).appendTo("#frame");if(quiz[0].hasOwnProperty("image")&&quiz[0]["image"]!=""){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[0]["image"]).attr("alt",h(quiz[0]["question"])).appendTo("#frame")}e(document.createElement("p")).addClass("explanation").attr("id","explanation").html("&nbsp;").appendTo("#frame");e(document.createElement("ul")).attr("id","choice-block").appendTo("#frame");b(quiz[0]["choices"]);e(document.createElement("div")).addClass("choice-box").attr("id","submitbutton").text("Check Answer").css({"font-weight":700,color:"#222",padding:"30px 0"}).appendTo("#frame");c()}}g()});
+    </script>
+    <style type="text/css" media="all">
+        /*css reset */
+        html,body,div,span,h1,h2,h3,h4,h5,h6,p,code,small,strike,strong,sub,sup,b,u,i{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;} 
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;} 
+        body{line-height:1; font:normal 0.9em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;} 
+        ol,ul{list-style:none;}
+        strong{font-weight:700;}
+        #frame{max-width:620px;width:auto;border:1px solid rgb(212, 212, 212);background:#fff;padding:10px;margin:3px;}
+        h1{font:normal bold 2em/1.8em "Helvetica Neue", Helvetica, Arial, sans-serif;text-align:left;border-bottom:1px solid #999;padding:0;width:auto}
+        h2{font:italic bold 1.3em/1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;text-align:center;margin:20px 0;}
+        p.pager{margin:5px 0 5px; font:bold 1em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;color:#999;}
+        img.question-image{display:block;max-width:250px;margin:10px auto;border:1px solid #ccc;width:100%;height:auto;}
+        #choice-block{display:block;list-style:none;margin:0;padding:0;}
+        #submitbutton{background:#5e89ff;}
+        #submitbutton:hover{background:#599eff;}
+        #explanation{margin:0 auto;padding:20px;width:75%;}
+        .choice-box{display:block;text-align:center;margin:8px auto;padding:10px 0;border:1px solid #666;cursor:pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+    </style>
+</head>
+<body style="margin-left: 30%;">
+    <div id="frame" role="content"></div>
+</body>
+</html>

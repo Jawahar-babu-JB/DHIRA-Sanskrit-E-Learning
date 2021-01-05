@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DHIRA | Fun With Learning</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <script src="../../Ajax/min.js" ></script>
+
+
+    <!-- jquery for maximum compatibility -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script>
+    /** Simple JavaScript Quiz
+     * version 0.1.0
+     * http://journalism.berkeley.edu
+     * created by: Jeremy Rue @jrue
+     *
+     * Copyright (c) 2013 The Regents of the University of California
+     * Released under the GPL Version 2 license
+     * http://www.opensource.org/licenses/gpl-2.0.php
+     * This program is distributed in the hope that it will be useful, but
+     * WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+     */
+
+    var quiztitle = "Fun With Learning | WORDS -3";
+
+
+var quiz = [
+        {
+            "question"      :   "What is the translation of the word - 'Door' ? ",
+            "image"         :   "https://4.imimg.com/data4/IN/OR/MY-18458846/wooden-double-door-design-500x500.jpeg",
+            "choices"       :   [
+                                    "द्वारम्",
+                                    "मत्स्य",
+                                    "रज्जु ",
+                                    "वायु"
+                                ],
+            "correct"       :   "द्वारम्",
+            "explanation"   :   "The translation for the word is द्वारम्",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Window' ? ",
+            "image"         :   "https://images.theconversation.com/files/349379/original/file-20200724-25-1b07lko.jpg?ixlib=rb-1.1.0&rect=8%2C25%2C5599%2C3707&q=45&auto=format&w=496&fit=clip",
+            "choices"       :   [
+                                    "इ – एति",
+                                    "वातायनम्,गवाक्षम्",
+                                    "क्षम्",
+                                    "अध्वन्"
+                                ],
+            "correct"       :   "वातायनम्,गवाक्षम्",
+            "explanation"   :   "The translation for the word is वातायनम्,गवाक्षम्",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Room' ? ",
+            "image"         :   "https://www.berjayahotel.com/sites/default/files/hotel-category-offers/kualalumpur/offers-room-berjaya-times-square-hotel-kuala-lumpur.jpg",
+            "choices"       :   [
+                                    "पक्ष",
+                                    "कक्षा",
+                                    "हृद् ",
+                                    "मुख"
+                                ],
+            "correct"       :   "कक्षा",
+            "explanation"   :   "The translation for the word is कक्षा",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'staircase' ? ",
+            "image"         :   "https://images.livmatrix.com/https://jumanji.livspace-cdn.com/magazine/wp-content/uploads/2017/08/27163439/Staircase-design_blog-cover.jpg",
+            "choices"       :   [
+                                    "ह्रस्व",
+                                    "पा – पिबति",
+                                    "अंशुक",
+                                    "सोपानम्/ सोपानमार्ग:"
+                                ],
+            "correct"       :   "सोपानम्/ सोपानमार्ग:",
+            "explanation"   :   "The translation for the word is सोपानम्/ सोपानमार्ग:",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Roof' ? ",
+            "image"         :   "https://tse2.mm.bing.net/th?id=OIP.dA9BHcXAukOjBXskhsFH9AHaDt&pid=Api&P=0&w=322&h=162",
+            "choices"       :   [
+                                    "मुख",
+                                    "चाल:, छदि: / छदिम्",
+                                    "ताल",
+                                    "हृद्"
+                                ],
+            "correct"       :   "चाल:, छदि: / छदिम्",
+            "explanation"   :   "The translation for the word is चाल:, छदि: / छदिम्",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Wall' ? ",
+            "image"         :   "https://s3-us-west-2.amazonaws.com/melingoimages/Images/105410.jpg",
+            "choices"       :   [
+                                    "सर्प",
+                                    "भित्ति , भित्तिका",
+                                    "वन",
+                                    "कर्ण"
+                                ],
+            "correct"       :   "भित्ति , भित्तिका",
+            "explanation"   :   "The translation for the word is भित्ति , भित्तिका",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Lock' ? ",
+            "image"         :   "https://cdn.godrej.com/img/Product/637267357056277547_26.1%20Product_Nav-tal%20Ultra%20XL%20Plus_886%20x%20710.jpg",
+            "choices"       :   [
+                                    "गुरु",
+                                    "ताल:",
+                                    "अन्य",
+                                    "अंहु"
+                                ],
+            "correct"       :   "ताल:",
+            "explanation"   :   "The translation for the word is ताल:",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Key' ? ",
+            "image"         :   "https://media.rs-online.com/t_large/F1243425-01.jpg",
+            "choices"       :   [
+                                    "कुञ्चिका, कीलम्",
+                                    "शिरस्",
+                                    "उदर",
+                                    "पद"
+                                ],
+            "correct"       :   "कुञ्चिका, कीलम्",
+            "explanation"   :   "The translation for the word is कुञ्चिका, कीलम्",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Living room' ? ",
+            "image"         :   "https://www.thespruce.com/thmb/WEst9BHwmGGE6AtmKrE5ck4m3t4=/3232x2424/smart/filters:no_upscale()/how-to-arrange-living-room-furniture-1976578-hero-c99074dcad854b669b91652046a39203.jpg",
+            "choices"       :   [
+                                    "आसनकक्षा",
+                                    "पद",
+                                    "वमति",
+                                    "उदर"
+                                ],
+            "correct"       :   "आसनकक्षा",
+            "explanation"   :   "The translation for the word is आसनकक्षा",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Bed room' ? ",
+            "image"         :   "https://www.bocadolobo.com/en/inspiration-and-ideas/wp-content/uploads/2018/03/Discover-the-Ultimate-Master-Bedroom-Styles-and-Inspirations-6_1.jpg",
+            "choices"       :   [
+                                    "शयनकक्षा, निद्राकक्षा",
+                                    "दत्/दन्त ",
+                                    "आलिन्द:",
+                                    "जवनिका पीता अस्ति।"
+                                ],
+            "correct"       :   "शयनकक्षा, निद्राकक्षा",
+            "explanation"   :   "The translation for the word is शयनकक्षा, निद्राकक्षा",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Guest room' ? ",
+            "image"         :   "https://www.thespruce.com/thmb/5o_dpOCoqBxM79wcGqWWA_qt50U=/5100x2869/smart/filters:no_upscale()/GettyImages-513040397-583b37d83df78c6f6ad71fe8.jpg",
+            "choices"       :   [
+                                    "नागापुश्पा",
+                                    "अतिथिकक्षा, अभ्यागतकक्षा",
+                                    "मास",
+                                    "अश्मन्"
+                                ],
+            "correct"       :   "अतिथिकक्षा, अभ्यागतकक्षा",
+            "explanation"   :   "The translation for the word is अतिथिकक्षा, अभ्यागतकक्षा",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Study room' ? ",
+            "image"         :   "https://image.slidesharecdn.com/kidroomfinal-190517053232/95/study-room-1-638.jpg?cb=1558071295",
+            "choices"       :   [
+                                    "हरित्",
+                                    "कुण्ठ",
+                                    "पठनकक्षा, अध्ययनकक्षा",
+                                    "मास"
+                                ],
+            "correct"       :   "पठनकक्षा, अध्ययनकक्षा",
+            "explanation"   :   "The translation for the word is पठनकक्षा, अध्ययनकक्षा",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Kitchen' ? ",
+            "image"         :   "https://www.thespruce.com/thmb/0qJKb8sMZuyUVNnMeytwUBoyIY0=/2121x1414/filters:fill(auto,1)/Whitemodernkitchen-GettyImages-1089101352-4eddd67a46984affa521c889b02c5bf1.jpg",
+            "choices"       :   [
+                                    "अश्मन्",
+                                    "मास",
+                                    "पाकशाला, पाककक्षा",
+                                    "नागापुश्पा"
+                                ],
+            "correct"       :   "पाकशाला, पाककक्षा",
+            "explanation"   :   "The translation for the word is पाकशाला, पाककक्षा",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Bath room' ? ",
+            "image"         :   "https://ksassets.timeincuk.net/wp/uploads/sites/56/2020/02/jungle-bathroom-2.jpg",
+            "choices"       :   [
+                                    "स्नानगृहम्, स्नानकक्षा",
+                                    "शुष्क",
+                                    "दूर",
+                                    "दक्षिण"
+                                ],
+            "correct"       :   "स्नानगृहम्, स्नानकक्षा",
+            "explanation"   :   "The translation for the word is स्नानगृहम्, स्नानकक्षा",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Toilet' ? ",
+            "image"         :   "https://cdn.bigbathroomshop.co.uk/media/catalog/product/cache/07469e52453ec3e9e92a88c7a63b12d8/b/c/bctbw102_ls_1000_2.jpg",
+            "choices"       :   [
+                                    "दूर",
+                                    "शौचालयः, शौचकक्षा",
+                                    "ह्रस्व",
+                                    "फलेग्रहि"
+                                ],
+            "correct"       :   "शौचालयः, शौचकक्षा",
+            "explanation"   :   "The translation for the word is शौचालयः, शौचकक्षा",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Terrace' ? ",
+            "image"         :   "https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2020/06/10/iStock-1169742705-1591730614.jpg?itok=74S7_pSb",
+            "choices"       :   [
+                                    "आर्द्र ",
+                                    "दक्षिण",
+                                    "दूर",
+                                    "आलिन्द:" 
+                                ],
+            "correct"       :   "आलिन्द:",
+            "explanation"   :   "The translation for the word is आलिन्द:",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Table' ? ",
+            "image"         :   "https://1i9wu42vzknf1h4zwf2to5aq-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/x_91-1796-2LVS_HEDiningTbl003_c_s_-2.jpg",
+            "choices"       :   [
+                                    "शुष्क",
+                                    "पीठिका, उत्पीठिका",
+                                    "दक्षिण",
+                                    "दूर"
+                                ],
+            "correct"       :   "पीठिका, उत्पीठिका",
+            "explanation"   :   "The translation for the word is पीठिका, उत्पीठिका",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Dining Table' ? ",
+            "image"         :   "https://www.ulcdn.net/images/products/121923/slide/666x363/Danton_Folding_Dining_Table_Set_Capra_Chairs_Mahogany_Finish_01_IMG_0052-M.jpg?1477555973",
+            "choices"       :   [
+                                    "आर्द्र",
+                                    "रज्जु",
+                                    "भोजनपीठिका",
+                                    "वायु"
+                                ],
+            "correct"       :   "भोजनपीठिका",
+            "explanation"   :   "The translation for the word is भोजनपीठिका",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Chair' ? ",
+            "image"         :   "https://images-na.ssl-images-amazon.com/images/I/311UE71HI0L._SX425_.jpg",
+            "choices"       :   [
+                                    "मास",
+                                    "पराणसा",
+                                    "किंशुक – पलाश",
+                                    "आसन्दी, आसन्द:, आसन्दम्"
+                                ],
+            "correct"       :   "आसन्दी, आसन्द:, आसन्दम्",
+            "explanation"   :   "The translation for the word is आसन्दी, आसन्द:, आसन्दम्",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Couch' ? ",
+            "image"         :   "https://www.thehomedekor.in/content/images/thumbs/0002078_ran-lounge-couch_550.jpeg",
+            "choices"       :   [
+                                    "भ्रमणध्वनि",
+                                    "शय्या, प्रस्तरण:, मञ्च:",
+                                    "मास",
+                                    "वायु"
+                                ],
+            "correct"       :   "शय्या, प्रस्तरण:, मञ्च:",
+            "explanation"   :   "The translation for the word is शय्या, प्रस्तरण:, मञ्च:",
+        },
+
+        ];
+
+/*** No need to edit below this line ***/
+var currentquestion=0,score=0,submt=true,picked;jQuery(document).ready(function(e){function h(i){return e(document.createElement("div")).text(i).html()}function b(k){if(typeof k!=="undefined"&&e.type(k)=="array"){e("#choice-block").empty();for(var j=0;j<k.length;j++){e(document.createElement("li")).addClass("choice choice-box").attr("data-index",j).text(k[j]).appendTo("#choice-block")}}}function d(){submt=true;e("#explanation").empty();e("#question").text(quiz[currentquestion]["question"]);e("#pager").text("Question "+Number(currentquestion+1)+" of "+quiz.length);if(quiz[currentquestion].hasOwnProperty("image")&&quiz[currentquestion]["image"]!=""){if(e("#question-image").length==0){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"])).insertAfter("#question")}else{e("#question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"]))}}else{e("#question-image").remove()}b(quiz[currentquestion]["choices"]);c()}function f(i){if(quiz[currentquestion]["choices"][i]==quiz[currentquestion]["correct"]){e(".choice").eq(i).css({"background-color":"#50D943"});e("#explanation").html("<strong>Correct!</strong> "+h(quiz[currentquestion]["explanation"]));score++}else{e(".choice").eq(i).css({"background-color":"#D92623"});e("#explanation").html("<strong>Incorrect.</strong> "+h(quiz[currentquestion]["explanation"]))}currentquestion++;e("#submitbutton").html("NEXT QUESTION &raquo;").on("click",function(){if(currentquestion==quiz.length){a()}else{e(this).text("Check Answer").css({color:"#222"}).off("click");d()}})}function c(){e(".choice").on("mouseover",function(){e(this).css({"background-color":"#e1e1e1"})});e(".choice").on("mouseout",function(){e(this).css({"background-color":"#fff"})});e(".choice").on("click",function(){picked=e(this).attr("data-index");e(".choice").removeAttr("style").off("mouseout mouseover");e(this).css({"border-color":"#222","font-weight":700,"background-color":"#c1c1c1"});if(submt){submt=false;e("#submitbutton").css({color:"#000"}).on("click",function(){e(".choice").off("click");e(this).off("click");f(picked)})}})}function a(){e("#explanation").empty();e("#question").empty();e("#choice-block").empty();e("#submitbutton").remove();e("#question").text("You got "+score+" out of "+quiz.length+" correct.");e(document.createElement("h2")).css({"text-align":"center","font-size":"4em"}).text(Math.round(score/quiz.length*100)+"%").insertAfter("#question")}function g(){if(typeof quiztitle!=="undefined"&&e.type(quiztitle)==="string"){e(document.createElement("h1")).text(quiztitle).appendTo("#frame")}else{e(document.createElement("h1")).text("Quiz").appendTo("#frame")}if(typeof quiz!=="undefined"&&e.type(quiz)==="array"){e(document.createElement("p")).addClass("pager").attr("id","pager").text("Question 1 of "+quiz.length).appendTo("#frame");e(document.createElement("h2")).addClass("question").attr("id","question").text(quiz[0]["question"]).appendTo("#frame");if(quiz[0].hasOwnProperty("image")&&quiz[0]["image"]!=""){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[0]["image"]).attr("alt",h(quiz[0]["question"])).appendTo("#frame")}e(document.createElement("p")).addClass("explanation").attr("id","explanation").html("&nbsp;").appendTo("#frame");e(document.createElement("ul")).attr("id","choice-block").appendTo("#frame");b(quiz[0]["choices"]);e(document.createElement("div")).addClass("choice-box").attr("id","submitbutton").text("Check Answer").css({"font-weight":700,color:"#222",padding:"30px 0"}).appendTo("#frame");c()}}g()});
+</script>
+<style type="text/css" media="all">
+    /*css reset */
+    html,body,div,span,h1,h2,h3,h4,h5,h6,p,code,small,strike,strong,sub,sup,b,u,i{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;} 
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;} 
+    body{line-height:1; font:normal 0.9em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;} 
+    ol,ul{list-style:none;}
+    strong{font-weight:700;}
+    #frame{max-width:620px;width:auto;border:1px solid rgb(212, 212, 212);background:#fff;padding:10px;margin:3px;}
+    h1{font:normal bold 2em/1.8em "Helvetica Neue", Helvetica, Arial, sans-serif;text-align:left;border-bottom:1px solid #999;padding:0;width:auto}
+    h2{font:italic bold 1.3em/1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;text-align:center;margin:20px 0;}
+    p.pager{margin:5px 0 5px; font:bold 1em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;color:#999;}
+    img.question-image{display:block;max-width:250px;margin:10px auto;border:1px solid #ccc;width:100%;height:auto;}
+    #choice-block{display:block;list-style:none;margin:0;padding:0;}
+    #submitbutton{background:#5e89ff;}
+    #submitbutton:hover{background:#599eff;}
+    #explanation{margin:0 auto;padding:20px;width:75%;}
+    .choice-box{display:block;text-align:center;margin:8px auto;padding:10px 0;border:1px solid #666;cursor:pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+</style>
+</head>
+<body style="margin-left: 30%;">
+<div id="frame" role="content"></div>
+</body>
+</html>

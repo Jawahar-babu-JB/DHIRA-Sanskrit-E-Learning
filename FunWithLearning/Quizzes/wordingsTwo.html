@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DHIRA | Fun With Learning</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <script src="../../Ajax/min.js" ></script>
+
+
+    <!-- jquery for maximum compatibility -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script>
+    /** Simple JavaScript Quiz
+     * version 0.1.0
+     * http://journalism.berkeley.edu
+     * created by: Jeremy Rue @jrue
+     *
+     * Copyright (c) 2013 The Regents of the University of California
+     * Released under the GPL Version 2 license
+     * http://www.opensource.org/licenses/gpl-2.0.php
+     * This program is distributed in the hope that it will be useful, but
+     * WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+     */
+
+    var quiztitle = "Fun With Learning | Wordings Two";
+
+
+var quiz = [
+        
+        {
+            "question"      :   "TRANSLATE : Do not stand in front of the television.",
+            "image"         :   "https://images.squarespace-cdn.com/content/v1/553ea8b0e4b05084ce9e9a87/1443726998579-7ZSRMSR239QZMUAM3D2D/ke17ZwdGBToddI8pDm48kIKRe3ESAiQz28wEG--VWa97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0k9kZPbuygN4RSDPe_G5PO_TYK45Kgn9-hyYB1TRdrcLZh_k4cuCm2sJ8sp5vLw-ng/baby+standing+in+front+of+tv.jpg",
+            "choices"       :   [
+                                    "दूरदर्शनस्य पुरत: न तिष्ठ।",
+                                    "मञ्च: काष्ठमयः भवति।",
+                                    "मञ्च: काष्ठमयः भवति। ",
+                                    "जवनिका पीता अस्ति।"
+                                ],
+            "correct"       :   "दूरदर्शनस्य पुरत: न तिष्ठ।",
+            "explanation"   :   "Answer is दूरदर्शनस्य पुरत: न तिष्ठ। ",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Mobile is useful to converse. ",
+            "image"         :   "https://hasura.io/blog/content/images/2019/04/christian-wiediger-606395-unsplash.jpg",
+            "choices"       :   [
+                                    "दूरदर्शनस्य पुरत: न तिष्ठ।",
+                                    "भ्रमणध्वनि: सम्भाषणार्थम् उपयुक्त:।",
+                                    "मञ्च: काष्ठमयः भवति। ",
+                                    "Nil"
+                                ],
+            "correct"       :   "भ्रमणध्वनि: सम्भाषणार्थम् उपयुक्त:।",
+            "explanation"   :   "Answer is  भ्रमणध्वनि: सम्भाषणार्थम् उपयुक्त:।",
+        },
+
+        {
+            "question"      :   "TRANSLATE : What is there in the bag? ",
+            "image"         :   "https://d329y26hx05pom.cloudfront.net/blog/wp-content/uploads/2015/01/What%E2%80%99s-in-your-BagCROP.jpg",
+            "choices"       :   [
+                                    "स्यूते किम् अस्ति ?",
+                                    "तन्त्रज्ञ: शीतकं सम्यक् करोति| ?",
+                                    "भ्रमणध्वनि: सम्भाषणार्थम् ?",
+                                    "Nil"
+                                ],
+            "correct"       :   "स्यूते किम् अस्ति ?",
+            "explanation"   :   "Answer is  स्यूते किम् अस्ति ?",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Radio was useful means of communication. ",
+            "image"         :   "https://d3n8a8pro7vhmx.cloudfront.net/cjfe/pages/1180/attachments/original/1460475737/radio.jpg?1460475737",
+            "choices"       :   [
+                                    "आकाशवाणी उपयुक्तं संवादमाध्यमम् आसीत् |",
+                                    "तन्त्रज्ञ: शीतकं सम्यक् करोति|",
+                                    "तन्त्रज्ञ: शीतकं सम्यक् करोति|",
+                                    "तन्त्रज्ञ: शीतकं सम्यक् करोति| "
+                                ],
+            "correct"       :   "आकाशवाणी उपयुक्तं संवादमाध्यमम् आसीत् |",
+            "explanation"   :   "Answer is  आकाशवाणी उपयुक्तं संवादमाध्यमम् आसीत् |",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Music player helps to listen to sweet songs. ",
+            "image"         :   "https://cdn57.androidauthority.net/wp-content/uploads/2020/11/Rocket-Music-Player-best-music-player-apps-for-Android.jpg",
+            "choices"       :   [
+                                    "सङ्गीतवादनकेन मधुराणि गीतानि श्रोतुं शक्नोति|",
+                                    "तन्त्रज्ञ: शीतकं सम्यक् करोति|",
+                                    "आकाशवाणी उपयुक्तं संवादमाध्यमम् आसीत् |",
+                                    "None Of This"
+                                ],
+            "correct"       :   "सङ्गीतवादनकेन मधुराणि गीतानि श्रोतुं शक्नोति|",
+            "explanation"   :   "Answer is सङ्गीतवादनकेन मधुराणि गीतानि श्रोतुं शक्नोति| ",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Compact disc is near computer. ",
+            "image"         :   "https://miro.medium.com/max/12000/1*PYkncHiTvzs7_oKsToO0MQ.jpeg",
+            "choices"       :   [
+                                    "कुथ: कक्षाया: शोभां वर्धयति।",
+                                    "सङ्गणकस्य समीपे सान्द्रवृत्तकम् अस्ति ।",
+                                    "व्यजनम् , विद्युत् व्यजनम्, तालवृन्तम्",
+                                    "आकाशवाणी उपयुक्तं संवादमाध्यमम् आसीत् |"
+                                ],
+            "correct"       :   "सङ्गणकस्य समीपे सान्द्रवृत्तकम् अस्ति ।",
+            "explanation"   :   "Answer is  सङ्गणकस्य समीपे सान्द्रवृत्तकम् अस्ति ।",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Fan provides air ",
+            "image"         :   "https://secure.img1-fg.wfcdn.com/im/12065811/compr-r85/7626/76260237/52-leesburg-5-blade-standard-ceiling-fan-with-pull-chain.jpg",
+            "choices"       :   [
+                                    "व्यजनं वायुं ददाति।",
+                                    "भोजनपीठिका",
+                                    "कृपया क्षम्यताम्",
+                                    "Nil"
+                                ],
+            "correct"       :   "व्यजनं वायुं ददाति।",
+            "explanation"   :   "Answer is  व्यजनं वायुं ददाति।",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Tube light illuminates the room. ",
+            "image"         :   "https://d2kbivafefgpfm.cloudfront.net/wysiwyg/Batten2.jpg",
+            "choices"       :   [
+                                    "न शीतलं भासते, उष्णकं निर्वापयतु।",
+                                    "दण्डदीप: कक्षां प्रकाशयति| ",
+                                    "Nil",
+                                    "फलेग्रहि पितृव्यः"
+                                ],
+            "correct"       :   "दण्डदीप: कक्षां प्रकाशयति| ",
+            "explanation"   :   "Answer is दण्डदीप: कक्षां प्रकाशयति| ",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Technician is repairing cooler. ",
+            "image"         :   "https://www.adams-air.com/houston/images/aa/cooling/cooling-repair-2.jpg",
+            "choices"       :   [
+                                    "भासते, उष्णकं निर्वापयतु।",
+                                    "फलेग्रहि पितृव्यः",
+                                    "तन्त्रज्ञ: शीतकं सम्यक्",
+                                    "तन्त्रज्ञ: शीतकं सम्यक् करोति|"
+                                ],
+            "correct"       :   "तन्त्रज्ञ: शीतकं सम्यक् करोति|",
+            "explanation"   :   "Answer is तन्त्रज्ञ: शीतकं सम्यक् करोति| ",
+        },
+
+        {
+            "question"      :   "TRANSLATE : It doesn’t feel cold, switch off heater. ",
+            "image"         :   "https://octanecdn.com/pvhvaccom/thermometer-in-snow.jpg",
+            "choices"       :   [
+                                    "शीतकं सम्यक् करोति",
+                                    "Nil",
+                                    "कृपया क्षम्यताम्",
+                                    "न शीतलं भासते, उष्णकं निर्वापयतु।"
+                                ],
+            "correct"       :   "न शीतलं भासते, उष्णकं निर्वापयतु।",
+            "explanation"   :   "Answer is न शीतलं भासते, उष्णकं निर्वापयतु। ",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Carpet improves beauty of the room. ",
+            "image"         :   "https://www.amerrugs.com/uploads/blog/CEN-11%20GRAY%20IVORY_LS.jpg",
+            "choices"       :   [
+                                    "तन्त्रज्ञ: शीतकं सम्यक् करोति|",
+                                    "कुथ: कक्षाया: शोभां वर्धयति।",
+                                    "कनिष्ठभगिनी",
+                                    "सङ्गणक: उत्पीठिकाया: उपरि स्थापित:। "
+                                ],
+            "correct"       :   "कुथ: कक्षाया: शोभां वर्धयति।",
+            "explanation"   :   "Answer is कुथ: कक्षाया: शोभां वर्धयति। ",
+        },
+
+        
+        // {
+        //     "question"      :   "TRANSLATE :  ",
+        //     "image"         :   "",
+        //     "choices"       :   [
+        //                             "",
+        //                             "",
+        //                             "",
+        //                             ""
+        //                         ],
+        //     "correct"       :   "",
+        //     "explanation"   :   "Answer is  ",
+        // },
+
+        
+
+        ];
+
+/*** No need to edit below this line ***/
+var currentquestion=0,score=0,submt=true,picked;jQuery(document).ready(function(e){function h(i){return e(document.createElement("div")).text(i).html()}function b(k){if(typeof k!=="undefined"&&e.type(k)=="array"){e("#choice-block").empty();for(var j=0;j<k.length;j++){e(document.createElement("li")).addClass("choice choice-box").attr("data-index",j).text(k[j]).appendTo("#choice-block")}}}function d(){submt=true;e("#explanation").empty();e("#question").text(quiz[currentquestion]["question"]);e("#pager").text("Question "+Number(currentquestion+1)+" of "+quiz.length);if(quiz[currentquestion].hasOwnProperty("image")&&quiz[currentquestion]["image"]!=""){if(e("#question-image").length==0){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"])).insertAfter("#question")}else{e("#question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"]))}}else{e("#question-image").remove()}b(quiz[currentquestion]["choices"]);c()}function f(i){if(quiz[currentquestion]["choices"][i]==quiz[currentquestion]["correct"]){e(".choice").eq(i).css({"background-color":"#50D943"});e("#explanation").html("<strong>Correct!</strong> "+h(quiz[currentquestion]["explanation"]));score++}else{e(".choice").eq(i).css({"background-color":"#D92623"});e("#explanation").html("<strong>Incorrect.</strong> "+h(quiz[currentquestion]["explanation"]))}currentquestion++;e("#submitbutton").html("NEXT QUESTION &raquo;").on("click",function(){if(currentquestion==quiz.length){a()}else{e(this).text("Check Answer").css({color:"#222"}).off("click");d()}})}function c(){e(".choice").on("mouseover",function(){e(this).css({"background-color":"#e1e1e1"})});e(".choice").on("mouseout",function(){e(this).css({"background-color":"#fff"})});e(".choice").on("click",function(){picked=e(this).attr("data-index");e(".choice").removeAttr("style").off("mouseout mouseover");e(this).css({"border-color":"#222","font-weight":700,"background-color":"#c1c1c1"});if(submt){submt=false;e("#submitbutton").css({color:"#000"}).on("click",function(){e(".choice").off("click");e(this).off("click");f(picked)})}})}function a(){e("#explanation").empty();e("#question").empty();e("#choice-block").empty();e("#submitbutton").remove();e("#question").text("You got "+score+" out of "+quiz.length+" correct.");e(document.createElement("h2")).css({"text-align":"center","font-size":"4em"}).text(Math.round(score/quiz.length*100)+"%").insertAfter("#question")}function g(){if(typeof quiztitle!=="undefined"&&e.type(quiztitle)==="string"){e(document.createElement("h1")).text(quiztitle).appendTo("#frame")}else{e(document.createElement("h1")).text("Quiz").appendTo("#frame")}if(typeof quiz!=="undefined"&&e.type(quiz)==="array"){e(document.createElement("p")).addClass("pager").attr("id","pager").text("Question 1 of "+quiz.length).appendTo("#frame");e(document.createElement("h2")).addClass("question").attr("id","question").text(quiz[0]["question"]).appendTo("#frame");if(quiz[0].hasOwnProperty("image")&&quiz[0]["image"]!=""){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[0]["image"]).attr("alt",h(quiz[0]["question"])).appendTo("#frame")}e(document.createElement("p")).addClass("explanation").attr("id","explanation").html("&nbsp;").appendTo("#frame");e(document.createElement("ul")).attr("id","choice-block").appendTo("#frame");b(quiz[0]["choices"]);e(document.createElement("div")).addClass("choice-box").attr("id","submitbutton").text("Check Answer").css({"font-weight":700,color:"#222",padding:"30px 0"}).appendTo("#frame");c()}}g()});
+</script>
+<style type="text/css" media="all">
+    /*css reset */
+    html,body,div,span,h1,h2,h3,h4,h5,h6,p,code,small,strike,strong,sub,sup,b,u,i{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;} 
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;} 
+    body{line-height:1; font:normal 0.9em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;} 
+    ol,ul{list-style:none;}
+    strong{font-weight:700;}
+    #frame{max-width:620px;width:auto;border:1px solid rgb(212, 212, 212);background:#fff;padding:10px;margin:3px;}
+    h1{font:normal bold 2em/1.8em "Helvetica Neue", Helvetica, Arial, sans-serif;text-align:left;border-bottom:1px solid #999;padding:0;width:auto}
+    h2{font:italic bold 1.3em/1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;text-align:center;margin:20px 0;}
+    p.pager{margin:5px 0 5px; font:bold 1em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;color:#999;}
+    img.question-image{display:block;max-width:250px;margin:10px auto;border:1px solid #ccc;width:100%;height:auto;}
+    #choice-block{display:block;list-style:none;margin:0;padding:0;}
+    #submitbutton{background:#5e89ff;}
+    #submitbutton:hover{background:#599eff;}
+    #explanation{margin:0 auto;padding:20px;width:75%;}
+    .choice-box{display:block;text-align:center;margin:8px auto;padding:10px 0;border:1px solid #666;cursor:pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+</style>
+</head>
+<body style="margin-left: 30%;">
+<div id="frame" role="content"></div>
+</body>
+</html>

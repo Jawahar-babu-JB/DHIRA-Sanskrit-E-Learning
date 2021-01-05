@@ -1,0 +1,113 @@
+body {
+    font-family: 'Didact Gothic', sans-serif;
+    color:#333;
+    box-sizing: border-box;
+    background-image: url("https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+        
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+.lang-menu {
+    
+    width: 900px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    position: relative;
+    height: 70px;
+    margin: auto;
+    color: #000000a4;
+    
+}
+.lang-menu .selected-lang {
+    line-height: 2;
+    margin-right: 34px;
+    font-family: 'Didact Gothic', sans-serif;
+    border-color: rgba(0, 0, 0, 0.712);
+    font-size: 30px;
+}
+
+.lang-menu ul {
+    background-color: #fff;
+    border: 1px solid #f8f8f8;
+    position: absolute;
+    
+    text-align: center;
+    top: 70px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+}
+
+
+.lang-menu ul li {
+    list-style: none;
+    text-align: left;
+    display: flex;
+    width: 270px;
+    height: 60px;
+    justify-content: space-between;
+    border-radius: 15px;
+    
+}
+.lang-menu ul li a {
+    text-decoration: none;
+    margin-top: 10px;
+    width: 300px;
+    padding: 5px 10px;
+    display: block;
+    color: rgba(0, 0, 0, 0.753);
+}
+.lang-menu ul li:hover {
+    background-color: #eeecec;
+    border-radius: 10px;
+    
+}
+.lang-menu a:hover{
+    color: rgb(197, 0, 92);
+}
+.lang-menu ul li a:before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pdf:before{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/42/Pdf-2127829.png);
+}
+
+.dis:before{
+    background-image: url(https://www.brandcrowd.com/gallery/brands/pictures/picture14872021216438.png);
+}
+
+.ltv:before{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0B3_jdAadh1s3VE2QEhtojToUZJHDfpFuxA&usqp=CAU);
+}
+
+.pa:before{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO4H5rN-sMU5E4PqD8skNZ2ZLbxCtBm5xkYA&usqp=CAU);
+}
+
+.el:before{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5pJB0kKgsyLgg6h8c6u4Fq9W3gAs2K4J7LA&usqp=CAU);
+}
+
+.not:before{
+    background-image: url(https://img.talkandroid.com/uploads/2015/10/Parchi-logo.png);
+}
+
+* {
+    box-sizing: border-box;
+}

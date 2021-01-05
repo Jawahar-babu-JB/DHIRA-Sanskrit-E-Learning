@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DHIRA | Fun With Learning</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <script src="../../Ajax/min.js" ></script>
+
+    <!-- jquery for maximum compatibility -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script>
+    /** Simple JavaScript Quiz
+     * version 0.1.0
+     * http://journalism.berkeley.edu
+     * created by: Jeremy Rue @jrue
+     *
+     * Copyright (c) 2013 The Regents of the University of California
+     * Released under the GPL Version 2 license
+     * http://www.opensource.org/licenses/gpl-2.0.php
+     * This program is distributed in the hope that it will be useful, but
+     * WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+     */
+
+    var quiztitle = "Fun With Learning | FINAL REVISION";
+
+
+var quiz = [
+        {
+            "question"      :   "What is the pronunciation of the letter ' इ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "i",
+                                    "ye",
+                                    "e",
+                                    "ee"
+                                ],
+            "correct"       :   "i",
+            "explanation"   :   "The right pronunciation is i",
+        },
+        {
+            "question"      :   "Lotus",
+            "image"         :   "https://english.mathrubhumi.com/polopoly_fs/1.3215425.1539237272!/image/image.jpg_gen/derivatives/landscape_894_577/image.jpg",
+            "choices"       :   [
+                                    "पुष्प",
+                                    "उत्पलम्",
+                                    "आभरण",
+                                    "धन्यवादाः"
+                                ],
+            "correct"       :   "उत्पलम्",
+            "explanation"   :   "Answer is उत्पलम्",
+        },
+    
+        {
+            "question"      :   "Magnolia",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/4/49/Magnolia_wieseneri.jpg",
+            "choices"       :   [
+                                    "चम्पकम्",
+                                    "पुष्प",
+                                    "आभरण",
+                                    "धन्यवादाः"
+                                ],
+            "correct"       :   "चम्पकम्",
+            "explanation"   :   "Answer is चम्पकम्",
+        },
+        {
+            "question"      :   "Year  (varsa)",
+            "image"         :   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyNbqd8zclqEimwyrhrmeElhEjwqAXsuRNgg&usqp=CAU",
+            "choices"       :   [
+                                    "वमति",
+                                    "वर्ष",
+                                    "वमति",
+                                    "अस्तु"
+                                ],
+            "correct"       :   "वर्ष",
+            "explanation"   :   "Answer is वर्ष",
+        },
+        {
+            "question"      :   "Please  (krpaya)",
+            "image"         :   "https://pngimage.net/wp-content/uploads/2018/06/please-png-2.png",
+            "choices"       :   [
+                                    "मत्स्य",
+                                    "वमति",
+                                    "अस्तु",
+                                    "कृपया"
+                                ],
+            "correct"       :   "कृपया",
+            "explanation"   :   "Answer is कृपया",
+        },
+    
+        
+        {
+            "question"      :   "Thank you  (dhanyavadah)",
+            "image"         :   "https://www.reedpublicrelations.com/wp-content/uploads/2019/11/Reed-blog-post-image.jpg",
+            "choices"       :   [
+                                    "वमति",
+                                    "धन्यवादाः",
+                                    "अस्तु",
+                                    "मत्स्य"
+                                ],
+            "correct"       :   "धन्यवादाः",
+            "explanation"   :   "Answer is धन्यवादाः",
+        },
+        {
+            "question"      :   "No",
+            "image"         :   "https://png.pngtree.com/png-clipart/20190903/original/pngtree-red-no-icon-png-image_4428379.jpg",
+            "choices"       :   [
+                                    "अस्तु",
+                                    "मत्स्य",
+                                    "मा",
+                                    "वमति"
+                                ],
+            "correct"       :   "मा",
+            "explanation"   :   "Answer is मा",
+        },
+        {
+            "question"      :   "Water Lily",
+            "image"         :   "https://cdn.shopify.com/s/files/1/0223/5181/articles/White-Water-Lily1_2048x.progressive_9a90a8df-b617-4e81-976e-f58a12784026_1600x.jpg?v=1516234095",
+            "choices"       :   [   
+                                    "पद्मिनी",
+                                    "पुष्प",
+                                    "आभरण",
+                                    "धन्यवादाः"
+                                ],
+            "correct"       :   "पद्मिनी",
+            "explanation"   :   "Answer is पद्मिनी",
+        },
+    
+
+
+        {
+            "question"      :   "Warm  (tapta)",
+            "image"         :   "https://andrewhenry.ca/2017/wp-content/uploads/2017/12/keep-your-home-warm-this-winter.jpg",
+            "choices"       :   [
+                                    "तप्त",
+                                    "वमति",
+                                    "अस्तु",
+                                    "वमति"
+                                ],
+            "correct"       :   "तप्त",
+            "explanation"   :   "Answer is तप्त",
+        },
+
+        {
+            "question"      :   "What is the number - विंशति ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Ninety-two(९२)",
+                                    "Eight(८)",
+                                    "Twenty(२॰)",
+                                    "NOT"
+                                ],
+            "correct"       :   "Twenty(२॰)",
+            "explanation"   :   "The number is Twenty(२॰)",
+        },
+        {
+            "question"      :   "What is the number - त्रिपञ्चाशत् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Fifty-three(५३)",
+                                    "Fifty-six(५६)",
+                                    "Fifty-eight(५८)",
+                                    "NOT"
+                                ],
+            "correct"       :   "Fifty-three(५३)",
+            "explanation"   :   "The number is Fifty-three(५३)",
+        },
+        {
+    "question"      :   "What is the pronunciation of the letter 'ख्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ka",
+                            "g",
+                            "kk",
+                            "kh"
+                        ],
+    "correct"       :   "kh",
+    "explanation"   :   "The right pronunciation is kh",
+},
+{
+            "question"      :   "What is the number - द्वादशन् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Seventeen(१७)",
+                                    "Twelve(१२)",
+                                    "Fifteen(१५)",
+                                    "Twenty(२॰)"
+                                ],
+            "correct"       :   "Twelve(१२)",
+            "explanation"   :   "The number is Twelve(१२)",
+        },
+        {
+            "question"      :   "What is the number - एकाविंशति ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Seventeen(१७)",
+                                    "Nineteen(१९)",
+                                    "Twenty-one(२१)",
+                                    "Twenty-four(२४)"
+                                ],
+            "correct"       :   "Twenty-one(२१)",
+            "explanation"   :   "The number is Twenty-one(२१)",
+        },
+        {
+            "question"      :   "What is the pronunciation of the letter 'ऊ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "u",
+                                    "ū",
+                                    "y",
+                                    "yy"
+                                ],
+            "correct"       :   "ū",
+            "explanation"   :   "The right pronunciation is ū",
+        },
+
+        {
+            "question"      :   "Fish  [Matsya(muts-yuh)]",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Astronotus_ocellatus.jpg/1280px-Astronotus_ocellatus.jpg",
+            "choices"       :   [
+                                    "मत्स्य",
+                                    "सर्प",
+                                    "व्याघ्र",
+                                    "वन"
+                                ],
+            "correct"       :   "मत्स्य",
+            "explanation"   :   "Answer is मत्स्य",
+        },
+        {
+            "question"      :   "Tiger  [vyaghra (vi-A-gra)]",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Siberischer_tiger_de_edit02.jpg/1024px-Siberischer_tiger_de_edit02.jpg",
+            "choices"       :   [
+                                    "गज",
+                                    "व्याघ्र",
+                                    "काकः",
+                                    "वन"
+                                ],
+            "correct"       :   "व्याघ्र",
+            "explanation"   :   " Answer is व्याघ्र",
+        },
+
+        {
+            "question"      :   "What is the number - एकोनचत्वारिंशत् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Thirty-six(३६)",
+                                    "Thirty-four(३४)",
+                                    "Thirty-nine(३९)",
+                                    "Thirty-two(३२)"
+                                ],
+            "correct"       :   "Thirty-nine(३९)",
+            "explanation"   :   "The number is Thirty-nine(३९)",
+        },
+        {
+            "question"      :   "What is the number - एकचत्वारिंशत् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Forty-one(४१)",
+                                    "Thirty-seven(३७)",
+                                    "Forty-six(४६)",
+                                    "Thirty-two(३२)"
+                                ],
+            "correct"       :   "Forty-one(४१)",
+            "explanation"   :   "The number is Forty-one(४१)",
+        },
+        {
+    "question"      :   "What is the pronunciation of the letter ' ञ्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ṅ",
+                            "ñ",
+                            "jh",
+                            "n"
+                        ],
+    "correct"       :   "ñ",
+    "explanation"   :   "The right pronunciation is ñ",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'झ् '? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "j",
+                            "jh",
+                            "dh",
+                            "je"
+                        ],
+    "correct"       :   "jh",
+    "explanation"   :   "The right pronunciation is jh",
+},
+
+
+        {
+            "question"      :   "What is the pronunciation of the letter 'ॠ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "r",
+                                    "ṝ",
+                                    "re",
+                                    "ṛ"
+                                ],
+            "correct"       :   "ṝ",
+            "explanation"   :   "The right pronunciation is ṝ",
+        },
+        
+        {
+            "question"      :   "What is the translation of the word - 'Window' ? ",
+            "image"         :   "https://images.theconversation.com/files/349379/original/file-20200724-25-1b07lko.jpg?ixlib=rb-1.1.0&rect=8%2C25%2C5599%2C3707&q=45&auto=format&w=496&fit=clip",
+            "choices"       :   [
+                                    "इ – एति",
+                                    "वातायनम्,गवाक्षम्",
+                                    "क्षम्",
+                                    "अध्वन्"
+                                ],
+            "correct"       :   "वातायनम्,गवाक्षम्",
+            "explanation"   :   "The translation for the word is वातायनम्,गवाक्षम्",
+        },
+        {
+            "question"      :   "Lotus",
+            "image"         :   "https://english.mathrubhumi.com/polopoly_fs/1.3215425.1539237272!/image/image.jpg_gen/derivatives/landscape_894_577/image.jpg",
+            "choices"       :   [
+                                    "पुष्प",
+                                    "उत्पलम्",
+                                    "आभरण",
+                                    "धन्यवादाः"
+                                ],
+            "correct"       :   "उत्पलम्",
+            "explanation"   :   "Answer is उत्पलम्",
+        },
+    
+        {
+            "question"      :   "Magnolia",
+            "image"         :   "https://upload.wikimedia.org/wikipedia/commons/4/49/Magnolia_wieseneri.jpg",
+            "choices"       :   [
+                                    "चम्पकम्",
+                                    "पुष्प",
+                                    "आभरण",
+                                    "धन्यवादाः"
+                                ],
+            "correct"       :   "चम्पकम्",
+            "explanation"   :   "Answer is चम्पकम्",
+        },
+
+        {
+            "question"      :   "What is the translation of the word - 'Wall' ? ",
+            "image"         :   "https://s3-us-west-2.amazonaws.com/melingoimages/Images/105410.jpg",
+            "choices"       :   [
+                                    "सर्प",
+                                    "भित्ति , भित्तिका",
+                                    "वन",
+                                    "कर्ण"
+                                ],
+            "correct"       :   "भित्ति , भित्तिका",
+            "explanation"   :   "The translation for the word is भित्ति , भित्तिका",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Chair' ? ",
+            "image"         :   "https://images-na.ssl-images-amazon.com/images/I/311UE71HI0L._SX425_.jpg",
+            "choices"       :   [
+                                    "मास",
+                                    "पराणसा",
+                                    "किंशुक – पलाश",
+                                    "आसन्दी, आसन्द:, आसन्दम्"
+                                ],
+            "correct"       :   "आसन्दी, आसन्द:, आसन्दम्",
+            "explanation"   :   "The translation for the word is आसन्दी, आसन्द:, आसन्दम्",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Lock' ? ",
+            "image"         :   "https://cdn.godrej.com/img/Product/637267357056277547_26.1%20Product_Nav-tal%20Ultra%20XL%20Plus_886%20x%20710.jpg",
+            "choices"       :   [
+                                    "गुरु",
+                                    "ताल:",
+                                    "अन्य",
+                                    "अंहु"
+                                ],
+            "correct"       :   "ताल:",
+            "explanation"   :   "The translation for the word is ताल:",
+        },
+        {
+    "question"      :   "What is the pronunciation of the letter 'फ्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "pm",
+                            "phe",
+                            "ae",
+                            "ph"
+                        ],
+    "correct"       :   "ph",
+    "explanation"   :   "The right pronunciation is ph",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'ब्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "p",
+                            "b",
+                            "be",
+                            "pe"
+                        ],
+    "correct"       :   "b",
+    "explanation"   :   "The right pronunciation is b",
+},
+
+{
+            "question"      :   "Warm  (tapta)",
+            "image"         :   "https://andrewhenry.ca/2017/wp-content/uploads/2017/12/keep-your-home-warm-this-winter.jpg",
+            "choices"       :   [
+                                    "तप्त",
+                                    "वमति",
+                                    "अस्तु",
+                                    "वमति"
+                                ],
+            "correct"       :   "तप्त",
+            "explanation"   :   "Answer is तप्त",
+        },
+
+        {
+            "question"      :   "TRANSLATE : What do you see out of window? ",
+            "image"         :   "https://gygb.com/wp-content/uploads/o-MATURE-WOMAN-LOOKING-OUT-WINDOW-facebook.jpg",
+            "choices"       :   [
+                                    "साध्वोः शीघ्रं मैत्री भवति।",
+                                    "सोपाने वामत: चलतु।",
+                                    "वातायना‌‌त् बहि: किं पश्यसि?",
+                                    "पा – पिबति"
+                                ],
+            "correct"       :   "वातायना‌‌त् बहि: किं पश्यसि?",
+            "explanation"   :   "Answer is वातायना‌‌त् बहि: किं पश्यसि?",
+        },
+
+        {
+            "question"      :   "TRANSLATE : My house has four rooms. ",
+            "image"         :   "https://cdn.home-designing.com/wp-content/uploads/2014/07/four-bedroom-house.1.jpeg",
+            "choices"       :   [
+                                    "सोपानम्/ सोपानमार्ग:",
+                                    "जवनिका पीता अस्ति।",
+                                    "मम गृहे चतस्र: कक्षा: सन्ति।",
+                                    "सोपाने वामत: चलतु।"
+                                ],
+            "correct"       :   "मम गृहे चतस्र: कक्षा: सन्ति।",
+            "explanation"   :   "Answer is मम गृहे चतस्र: कक्षा: सन्ति।",
+        },
+        {
+            "question"      :   "What is the translation of the word - 'Table' ? ",
+            "image"         :   "https://1i9wu42vzknf1h4zwf2to5aq-wpengine.netdna-ssl.com/wp-content/uploads/2019/03/x_91-1796-2LVS_HEDiningTbl003_c_s_-2.jpg",
+            "choices"       :   [
+                                    "शुष्क",
+                                    "पीठिका, उत्पीठिका",
+                                    "दक्षिण",
+                                    "दूर"
+                                ],
+            "correct"       :   "पीठिका, उत्पीठिका",
+            "explanation"   :   "The translation for the word is पीठिका, उत्पीठिका",
+        },
+        {
+            "question"      :   "Cobra Saffron",
+            "image"         :   "https://i.pinimg.com/originals/84/6e/35/846e356854e84e1a4b6fc6b5df7e04d9.jpg",
+            "choices"       :   [
+                                    "नागापुश्पा",
+                                    "पुष्प",
+                                    "धन्यवादाः",
+                                    "आभरण"
+                                ],
+            "correct"       :   "नागापुश्पा",
+            "explanation"   :   "Answer is नागापुश्पा",
+        },
+        {
+            "question"      :   "Cold  (sita)",
+            "image"         :   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQumOSRYW4dFvS3Ch7jmzy2QGNSAgTh7rntaQ&usqp=CAU",
+            "choices"       :   [
+                                    "वमति",
+                                    "वमति",
+                                    "शीत",
+                                    "अस्तु"
+                                ],
+            "correct"       :   "शीत",
+            "explanation"   :   "Answer is शीत",
+        },
+        {
+            "question"      :   "TRANSLATE : Do not forget the keys ",
+            "image"         :   "https://i.pinimg.com/originals/7a/70/81/7a70814823d6b35df206925685280266.jpg",
+            "choices"       :   [
+                                    "पिण्ड",
+                                    "ताल: गृहस्य संरक्षणार्थम् |",
+                                    "कुञ्चिकां मा विस्मरतु।",
+                                    "Nil"
+                                ],
+            "correct"       :   "कुञ्चिकां मा विस्मरतु।",
+            "explanation"   :   "Answer is कुञ्चिकां मा विस्मरतु।",
+        },
+
+        {
+            "question"      :   "TRANSLATE : Living room is spacious. ",
+            "image"         :   "https://i.pinimg.com/originals/f2/51/31/f2513165b0c8a98cc58306a8cadee264.jpg",
+            "choices"       :   [
+                                    "अहं स्नानगृहे स्नानं करोमि।",
+                                    "पीठिकायां पाक: सिद्ध:",
+                                    "आसनकक्षा विशाला वर्तते।",
+                                    "अतिथिकक्षा, अभ्यागतकक्षा"
+                                ],
+            "correct"       :   "आसनकक्षा विशाला वर्तते।",
+            "explanation"   :   "Answer is आसनकक्षा विशाला वर्तते।",
+        },
+        {
+    "question"      :   "What is the pronunciation of the letter 'ठ्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ḍh",
+                            "ta",
+                            "ṭh",
+                            "ṭ"
+                        ],
+    "correct"       :   "ṭh",
+    "explanation"   :   "The right pronunciation is ṭh",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'ढ्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ṭ",
+                            "ṇ",
+                            "ṭh",
+                            "ḍh"
+                        ],
+    "correct"       :   "ḍh",
+    "explanation"   :   "The right pronunciation is ḍh",
+},
+        {
+            "question"      :   "What is the pronunciation of the letter ' ए'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "e",
+                                    "ee",
+                                    "ae",
+                                    "r"
+                                ],
+            "correct"       :   "e",
+            "explanation"   :   "The right pronunciation is e",
+        },
+
+        {
+            "question"      :   "What is the number - त्रिपञ्चाशत् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Fifty-three(५३)",
+                                    "Fifty-six(५६)",
+                                    "Fifty-eight(५८)",
+                                    "NOT"
+                                ],
+            "correct"       :   "Fifty-three(५३)",
+            "explanation"   :   "The number is Fifty-three(५३)",
+        },
+        {
+            "question"      :   "What is the number - अष्टसप्ततिः ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Twenty(२॰)",
+                                    "Seventy-eight(७८)",
+                                    "Fifty-three(५३)",
+                                    "Eighty(८॰)"
+                                ],
+            "correct"       :   "Seventy-eight(७८)",
+            "explanation"   :   "The number is Seventy-eight(७८)",
+        },
+
+        {
+    "question"      :   "What is the pronunciation of the letter 'न्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "n",
+                            "na",
+                            "ne",
+                            "nn"
+                        ],
+    "correct"       :   "n",
+    "explanation"   :   "The right pronunciation is n",
+},
+{
+            "question"      :   "TRANSLATE : Tube light illuminates the room. ",
+            "image"         :   "https://d2kbivafefgpfm.cloudfront.net/wysiwyg/Batten2.jpg",
+            "choices"       :   [
+                                    "न शीतलं भासते, उष्णकं निर्वापयतु।",
+                                    "दण्डदीप: कक्षां प्रकाशयति| ",
+                                    "Nil",
+                                    "फलेग्रहि पितृव्यः"
+                                ],
+            "correct"       :   "दण्डदीप: कक्षां प्रकाशयति| ",
+            "explanation"   :   "Answer is दण्डदीप: कक्षां प्रकाशयति| ",
+        },
+
+{
+    "question"      :   "What is the pronunciation of the letter 'श्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ś",
+                            "sa",
+                            "s",
+                            "ṣ"
+                        ],
+    "correct"       :   "ś",
+    "explanation"   :   "The right pronunciation is ś",
+},
+
+{
+            "question"      :   "TRANSLATE : Terrace is beautiful. ",
+            "image"         :   "https://www.ofdesign.net/wp-content/uploads/files/5/1/3/65-ideas-of-terraces-beautiful-garden-and-roof-terraces-0-513.jpg",
+            "choices"       :   [
+                                    "आलिन्द: रम्य: अस्ति।",
+                                    " शौचालयं प्रक्षालयति |",
+                                    "स्नानगृहे स्नानं करोमि।",
+                                    "NIL"
+                                ],
+            "correct"       :   "आलिन्द: रम्य: अस्ति। ",
+            "explanation"   :   "Answer is आलिन्द: रम्य: अस्ति। ",
+        },
+
+        {
+            "question"      :   "TRANSLATE :  Food is ready on the table.",
+            "image"         :   "https://previews.123rf.com/images/vichie81/vichie811701/vichie81170100001/68762028-dining-table-with-food-ready-to-eat.jpg",
+            "choices"       :   [
+                                    "मञ्च: काष्ठमयः भवति। ",
+                                    "फलेग्रहि शौचालयं",
+                                    "पीठिकायां पाक: सिद्ध:।",
+                                    "None Of These"
+                                ],
+            "correct"       :   "पीठिकायां पाक: सिद्ध:।",
+            "explanation"   :   "Answer is पीठिकायां पाक: सिद्ध:।",
+        },
+{
+    "question"      :   "What is the pronunciation of the letter 'ष्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ṣ",
+                            "s",
+                            "ś",
+                            "sa"
+                        ],
+    "correct"       :   "ṣ",
+    "explanation"   :   "The right pronunciation is ṣ",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'ध्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ḍh",
+                            "n",
+                            "dh",
+                            "th"
+                        ],
+    "correct"       :   "dh",
+    "explanation"   :   "The right pronunciation is dh",
+},
+      
+
+
+
+
+        
+    ];
+
+    /*** No need to edit below this line ***/
+var currentquestion=0,score=0,submt=true,picked;jQuery(document).ready(function(e){function h(i){return e(document.createElement("div")).text(i).html()}function b(k){if(typeof k!=="undefined"&&e.type(k)=="array"){e("#choice-block").empty();for(var j=0;j<k.length;j++){e(document.createElement("li")).addClass("choice choice-box").attr("data-index",j).text(k[j]).appendTo("#choice-block")}}}function d(){submt=true;e("#explanation").empty();e("#question").text(quiz[currentquestion]["question"]);e("#pager").text("Question "+Number(currentquestion+1)+" of "+quiz.length);if(quiz[currentquestion].hasOwnProperty("image")&&quiz[currentquestion]["image"]!=""){if(e("#question-image").length==0){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"])).insertAfter("#question")}else{e("#question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"]))}}else{e("#question-image").remove()}b(quiz[currentquestion]["choices"]);c()}function f(i){if(quiz[currentquestion]["choices"][i]==quiz[currentquestion]["correct"]){e(".choice").eq(i).css({"background-color":"#50D943"});e("#explanation").html("<strong>Correct!</strong> "+h(quiz[currentquestion]["explanation"]));score++}else{e(".choice").eq(i).css({"background-color":"#D92623"});e("#explanation").html("<strong>Incorrect.</strong> "+h(quiz[currentquestion]["explanation"]))}currentquestion++;e("#submitbutton").html("NEXT QUESTION &raquo;").on("click",function(){if(currentquestion==quiz.length){a()}else{e(this).text("Check Answer").css({color:"#222"}).off("click");d()}})}function c(){e(".choice").on("mouseover",function(){e(this).css({"background-color":"#e1e1e1"})});e(".choice").on("mouseout",function(){e(this).css({"background-color":"#fff"})});e(".choice").on("click",function(){picked=e(this).attr("data-index");e(".choice").removeAttr("style").off("mouseout mouseover");e(this).css({"border-color":"#222","font-weight":700,"background-color":"#c1c1c1"});if(submt){submt=false;e("#submitbutton").css({color:"#000"}).on("click",function(){e(".choice").off("click");e(this).off("click");f(picked)})}})}function a(){e("#explanation").empty();e("#question").empty();e("#choice-block").empty();e("#submitbutton").remove();e("#question").text("You got "+score+" out of "+quiz.length+" correct.");e(document.createElement("h2")).css({"text-align":"center","font-size":"4em"}).text(Math.round(score/quiz.length*100)+"%").insertAfter("#question")}function g(){if(typeof quiztitle!=="undefined"&&e.type(quiztitle)==="string"){e(document.createElement("h1")).text(quiztitle).appendTo("#frame")}else{e(document.createElement("h1")).text("Quiz").appendTo("#frame")}if(typeof quiz!=="undefined"&&e.type(quiz)==="array"){e(document.createElement("p")).addClass("pager").attr("id","pager").text("Question 1 of "+quiz.length).appendTo("#frame");e(document.createElement("h2")).addClass("question").attr("id","question").text(quiz[0]["question"]).appendTo("#frame");if(quiz[0].hasOwnProperty("image")&&quiz[0]["image"]!=""){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[0]["image"]).attr("alt",h(quiz[0]["question"])).appendTo("#frame")}e(document.createElement("p")).addClass("explanation").attr("id","explanation").html("&nbsp;").appendTo("#frame");e(document.createElement("ul")).attr("id","choice-block").appendTo("#frame");b(quiz[0]["choices"]);e(document.createElement("div")).addClass("choice-box").attr("id","submitbutton").text("Check Answer").css({"font-weight":700,color:"#222",padding:"30px 0"}).appendTo("#frame");c()}}g()});
+    </script>
+    <style type="text/css" media="all">
+        /*css reset */
+        html,body,div,span,h1,h2,h3,h4,h5,h6,p,code,small,strike,strong,sub,sup,b,u,i{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;} 
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;} 
+        body{line-height:1; font:normal 0.9em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;} 
+        ol,ul{list-style:none;}
+        strong{font-weight:700;}
+        #frame{max-width:620px;width:auto;border:1px solid rgb(212, 212, 212);background:#fff;padding:10px;margin:3px;}
+        h1{font:normal bold 2em/1.8em "Helvetica Neue", Helvetica, Arial, sans-serif;text-align:left;border-bottom:1px solid #999;padding:0;width:auto}
+        h2{font:italic bold 1.3em/1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;text-align:center;margin:20px 0;}
+        p.pager{margin:5px 0 5px; font:bold 1em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;color:#999;}
+        img.question-image{display:block;max-width:250px;margin:10px auto;border:1px solid #ccc;width:100%;height:auto;}
+        #choice-block{display:block;list-style:none;margin:0;padding:0;}
+        #submitbutton{background:#5e89ff;}
+        #submitbutton:hover{background:#599eff;}
+        #explanation{margin:0 auto;padding:20px;width:75%;}
+        .choice-box{display:block;text-align:center;margin:8px auto;padding:10px 0;border:1px solid #666;cursor:pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+    </style>
+</head>
+<body style="margin-left: 30%;">
+    <div id="frame" role="content"></div>
+</body>
+</html>

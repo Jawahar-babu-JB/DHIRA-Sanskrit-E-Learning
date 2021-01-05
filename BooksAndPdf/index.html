@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <link rel="icon" href="https://drive.google.com/file/d/1Fip5fcUiZ0g9J8cCEzOlHzyPvf6gXFqO/view?usp=sharing" type="image/gif" sizes="16x16">
+
+        <title>DHIRA | Books/Pdf</title>
+        <link rel="Stylesheet" href="./style.css" \>
+	      <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+        
+      
+    </head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  min-height: 100vh;
+}
+
+.section-main{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url(bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 100px;
+}
+
+.section-main h1{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 60px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 80px;
+}
+
+header{
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  transition: 0.6s;
+  background-color: #fff;
+}
+
+header.sticky{
+  background: rgb(255, 254, 251);
+  padding: 15px 100px;
+}
+
+header .brand{
+  color: black;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+header .menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .menu a{
+  color: rgb(23, 5, 85);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 30px;
+  padding: 0 10px;
+  border-radius: 20px;
+  transition: 0.3s;
+  transition-property: color, background;
+}
+
+header .menu a:hover{
+  color: blue;
+  background: #fff;
+}
+
+header .btn{
+  color: black;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+.section-two{
+  min-height: 100vh;
+  background: #aaa;
+  padding: 20px 100px;
+}
+
+.section-two h2{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+
+.section-two p{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+@media (max-width: 1060px){
+  header .btn{
+    display: block;
+  }
+
+  header .menu{
+    position: fixed;
+    background: #1483D5;
+    flex-direction: column;
+    min-width: 400px;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    padding: 80px 50px;
+    transition: 0.5s;
+    transition-property: right;
+  }
+
+  header .menu.active{
+    right: 0;
+  }
+
+  header .menu .close-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 25px;
+  }
+
+  header .menu a{
+    display: block;
+    font-size: 20px;
+    margin: 20px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 630px){
+  .section-main h1{
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+                           
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand"><img src="pic.jpeg"  style="width: 40px;height: 60px;"/> <img src="name.jpeg" style="width: 140px;height: 60px;" /></a>
+      <div class="menu">
+        <div class="btn">
+          <i class="fas fa-times close-btn"></i>
+        </div>
+        <a href="../index.html">Home</a>
+       
+        <a href="../FunWithLearning/About/about.html">About</a>
+        
+        <a href="../FunWithLearning/Contact/contact.html">Contact</a>
+      </div>
+      <div class="btn">
+        <i class="fas fa-bars menu-btn"></i>
+      </div>
+    </header>
+    
+
+    <script type="text/javascript">
+    //javascript for navigation bar effect on scroll
+    window.addEventListener("scroll", function(){
+      var header = document.querySelector("header");
+      header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+    //javascript for responsive navigation sidebar menu
+    var menu = document.querySelector('.menu');
+    var menuBtn = document.querySelector('.menu-btn');
+    var closeBtn = document.querySelector('.close-btn');
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.add('active');
+    });
+
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove('active');
+    });
+    </script>
+  
+<div class="heading" style="margin-top: 10%;"> 
+    <h2>WELCOME</h2><br>
+    <p style="font-weight: 600;">HEY!LETS START OUR COURSE<br><p></p><br><p>After Completing each level upgrade to next using earned coins  </p>
+    
+</div>
+ <div class="divTag">
+    <p>
+       <p class="pTag"><a href="https://drive.google.com/file/d/1MTunOBbPPGmkXIcDvmKgd9XIO9ow2mWK/view" target="_blank" class="aTag">Level 1</a> </p>
+  <p class="b1" ><a href="https://drive.google.com/file/d/1G0MKDIwp5o_F_XzIZxc3GPhqu-fY7BOe/view" target="_blank"class="aTag" >Level 2</a></p>
+    <p class="b2" ><a href="https://drive.google.com/file/d/1iUDSiv_7I70K3nzurFQkl62rIm7weYDF/view" target="_blank"class="aTag" >Level 3</a></p>
+       <p class="b3" ><a href="https://drive.google.com/file/d/1g1K8vPjAGgL5yr9j4HKIaX97hmhGG0fo/view"target="_blank" class="aTag">Level 4</a></p> 
+       <p class="b4" ><a href="https://drive.google.com/file/d/1ooSxjM_xRS7GTWsb_P-vDsJBkAd-T_GI/view"target="_blank"class="aTag" >Level 5</a></p>
+       <p class="b5" ><a href="https://drive.google.com/file/d/1BgSY86Taa5ZC8OSNkr_LOuOL0hxtwHj8/view"target="_blank" class="aTag">Level 6</a></p>
+       <p class="b6" ><a href="https://drive.google.com/file/d/1dNzfzpYnN8LnBf7u8RkoWbczLIPpLay7/view"target="_blank" class="aTag">Level 7</a></p>
+       <p class="b7" ><a href="https://drive.google.com/file/d/1nIFHJ5QrJiOAfHdETMeGtFB_tbKRF1yL/view"target="_blank" class="aTag">Level 8</a></p>
+       <p class="b8" ><a href="https://drive.google.com/file/d/1NAwzqWoZ0pq_t1wYz-qxpqN1foHUCc0t/view"target="_blank" class="aTag">Level 9</a></p></p>
+    </div>
+</body>
+</html>

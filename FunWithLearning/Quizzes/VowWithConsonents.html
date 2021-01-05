@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DHIRA | Fun With Learning</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+
+    <script src="../../Ajax/min.js" ></script>
+
+
+    <!-- jquery for maximum compatibility -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script>
+    /** Simple JavaScript Quiz
+     * version 0.1.0
+     * http://journalism.berkeley.edu
+     * created by: Jeremy Rue @jrue
+     *
+     * Copyright (c) 2013 The Regents of the University of California
+     * Released under the GPL Version 2 license
+     * http://www.opensource.org/licenses/gpl-2.0.php
+     * This program is distributed in the hope that it will be useful, but
+     * WITHOUT ANY WARRANTY; without even the implied warranty of
+     * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+     */
+
+    var quiztitle = "Fun With Learning | REVISION (Vowels, Consonents and Numbers)";
+
+
+var quiz = [
+        
+        
+        {
+            "question"      :   "What is the pronunciation of the letter 'आ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "a",
+                                    "ā",
+                                    "ae",
+                                    "ai"
+                                ],
+            "correct"       :   "ā",
+            "explanation"   :   "The right pronunciation is ā",
+        },
+
+        {
+    "question"      :   "What is the pronunciation of the letter 'व्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "va",
+                            "wa",
+                            "we",
+                            "v"
+                        ],
+    "correct"       :   "v",
+    "explanation"   :   "The right pronunciation is v",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'ल्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ll",
+                            "le",
+                            "l",
+                            "la"
+                        ],
+    "correct"       :   "l",
+    "explanation"   :   "The right pronunciation is l",
+},
+
+
+        {
+    "question"      :   "What is the pronunciation of the letter 'च्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "sa",
+                            "ch",
+                            "c",
+                            "ca"
+                        ],
+    "correct"       :   "c",
+    "explanation"   :   "The right pronunciation is c",
+},
+
+{
+            "question"      :   "What is the number - एकाविंशति ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Seventeen(१७)",
+                                    "Nineteen(१९)",
+                                    "Twenty-one(२१)",
+                                    "Twenty-four(२४)"
+                                ],
+            "correct"       :   "Twenty-one(२१)",
+            "explanation"   :   "The number is Twenty-one(२१)",
+        },
+        {
+            "question"      :   "What is the number - पञ्चविंशति ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Twenty-five(२५)",
+                                    "Thirty-two(३२)",
+                                    "Twenty-seven(२७)",
+                                    "Twenty-six(२६)"
+                                ],
+            "correct"       :   "Twenty-five(२५)",
+            "explanation"   :   "The number is Twenty-five(२५)",
+        },
+        {
+            "question"      :   "What is the number - अष्टाविंशति ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Twenty-six(२६)",
+                                    "Twenty-one(२१)",
+                                    "Thirty-two(३२)",
+                                    "Twenty-eight(२८)"
+                                ],
+            "correct"       :   "Twenty-eight(२८)",
+            "explanation"   :   "The number is Twenty-eight(२८)",
+        },
+{
+    "question"      :   "What is the pronunciation of the letter ' ग '? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "g",
+                            "ja",
+                            "ka",
+                            "k"
+                        ],
+    "correct"       :   "g",
+    "explanation"   :   "The right pronunciation is g",
+},
+        {
+            "question"      :   "What is the pronunciation of the letter ' इ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "i",
+                                    "ye",
+                                    "e",
+                                    "ee"
+                                ],
+            "correct"       :   "i",
+            "explanation"   :   "The right pronunciation is i",
+        },
+
+        {
+    "question"      :   "What is the pronunciation of the letter ' ग '? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "g",
+                            "ja",
+                            "ka",
+                            "k"
+                        ],
+    "correct"       :   "g",
+    "explanation"   :   "The right pronunciation is g",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'ख्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ka",
+                            "g",
+                            "kk",
+                            "kh"
+                        ],
+    "correct"       :   "kh",
+    "explanation"   :   "The right pronunciation is kh",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'घ्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ga",
+                            "gh",
+                            "ka",
+                            "gg"
+                        ],
+    "correct"       :   "gh",
+    "explanation"   :   "The right pronunciation is gh",
+},
+        {
+            "question"      :   "What is the pronunciation of the letter 'ई '? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "i",
+                                    "ī",
+                                    "e",
+                                    "y"
+                                ],
+            "correct"       :   "ī",
+            "explanation"   :   "The right pronunciation is ī",
+        },
+
+        {
+            "question"      :   "What is the number - एकोनचत्वारिंशत् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Thirty-six(३६)",
+                                    "Thirty-four(३४)",
+                                    "Thirty-nine(३९)",
+                                    "Thirty-two(३२)"
+                                ],
+            "correct"       :   "Thirty-nine(३९)",
+            "explanation"   :   "The number is Thirty-nine(३९)",
+        },
+        {
+    "question"      :   "What is the pronunciation of the letter 'क्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ka",
+                            "kh",
+                            "g",
+                            "kaa"
+                        ],
+    "correct"       :   "ka",
+    "explanation"   :   "The right pronunciation is ka",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'च्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "sa",
+                            "ch",
+                            "c",
+                            "ca"
+                        ],
+    "correct"       :   "c",
+    "explanation"   :   "The right pronunciation is c",
+},
+
+
+        {
+    "question"      :   "What is the pronunciation of the letter 'श्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ś",
+                            "sa",
+                            "s",
+                            "ṣ"
+                        ],
+    "correct"       :   "ś",
+    "explanation"   :   "The right pronunciation is ś",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'ष्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ṣ",
+                            "s",
+                            "ś",
+                            "sa"
+                        ],
+    "correct"       :   "ṣ",
+    "explanation"   :   "The right pronunciation is ṣ",
+},
+
+{
+            "question"      :   "What is the number - एकोनषष्ठिः ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Fifty-seven(५७)",
+                                    "Fifty-nine(५९)",
+                                    "Sixty-three(६३)",
+                                    "Sixty-one(६१)"
+                                ],
+            "correct"       :   "Fifty-nine(५९)",
+            "explanation"   :   "The number is Fifty-nine(५९)",
+        },
+        {
+            "question"      :   "What is the pronunciation of the letter 'उ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "u",
+                                    "ye",
+                                    "ū",
+                                    "uu"
+                                ],
+            "correct"       :   "u",
+            "explanation"   :   "The right pronunciation is u",
+        },
+
+        {
+    "question"      :   "What is the pronunciation of the letter 'ख्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ka",
+                            "g",
+                            "kk",
+                            "kh"
+                        ],
+    "correct"       :   "kh",
+    "explanation"   :   "The right pronunciation is kh",
+},
+
+{
+            "question"      :   "What is the number - शतम् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Ninety-two(९२)",
+                                    "Ninety-eight(९८)",
+                                    "Ninety-four(९४)",
+                                    "Hundred(१॰॰)"
+                                ],
+            "correct"       :   "Hundred(१॰॰)",
+            "explanation"   :   "The number is Hundred(१॰॰)",
+        },
+        {
+            "question"      :   "What is the number - अशीतिः ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Eighty-eight(८८)",
+                                    "Eighty(८॰)",
+                                    "Ninety-two",
+                                    "Hundred(१॰॰)"
+                                ],
+            "correct"       :   "Eighty(८॰)",
+            "explanation"   :   "The number is Eighty(८॰)",
+        },
+        {
+            "question"      :   "What is the pronunciation of the letter 'अ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "aa",
+                                    "ae",
+                                    "a",
+                                    "ā"
+                                ],
+            "correct"       :   "a",
+            "explanation"   :   "The right pronunciation is a",
+        },
+        {
+            "question"      :   "What is the number - पञ्चाशत् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Eighty-five(८५)",
+                                    "Forty-six(४६)",
+                                    "Fifty(५॰)",
+                                    "NOT"
+                                ],
+            "correct"       :   "Fifty(५॰)",
+            "explanation"   :   "The number is Fifty(५॰)",
+        },
+
+
+        {
+    "question"      :   "What is the pronunciation of the letter 'घ्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ga",
+                            "gh",
+                            "ka",
+                            "gg"
+                        ],
+    "correct"       :   "gh",
+    "explanation"   :   "The right pronunciation is gh",
+},
+
+{
+            "question"      :   "What is the number - विंशति ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Ninety-two(९२)",
+                                    "Eight(८)",
+                                    "Twenty(२॰)",
+                                    "NOT"
+                                ],
+            "correct"       :   "Twenty(२॰)",
+            "explanation"   :   "The number is Twenty(२॰)",
+        },
+        {
+            "question"      :   "What is the number - त्रिपञ्चाशत् ? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "Fifty-three(५३)",
+                                    "Fifty-six(५६)",
+                                    "Fifty-eight(५८)",
+                                    "NOT"
+                                ],
+            "correct"       :   "Fifty-three(५३)",
+            "explanation"   :   "The number is Fifty-three(५३)",
+        },
+{
+    "question"      :   "What is the pronunciation of the letter ' ञ्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ṅ",
+                            "ñ",
+                            "jh",
+                            "n"
+                        ],
+    "correct"       :   "ñ",
+    "explanation"   :   "The right pronunciation is ñ",
+},
+
+        {
+            "question"      :   "What is the pronunciation of the letter 'लृ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "la",
+                                    "l",
+                                    "ḷ",
+                                    "ll"
+                                ],
+            "correct"       :   "ḷ",
+            "explanation"   :   "The right pronunciation is ḷ",
+        },
+
+
+        {
+    "question"      :   "What is the pronunciation of the letter 'ब्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "p",
+                            "b",
+                            "be",
+                            "pe"
+                        ],
+    "correct"       :   "b",
+    "explanation"   :   "The right pronunciation is b",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'प्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "p",
+                            "b",
+                            "be",
+                            "pe"
+                        ],
+    "correct"       :   "p",
+    "explanation"   :   "The right pronunciation is p",
+},
+        {
+            "question"      :   "What is the pronunciation of the letter 'ओ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "oe",
+                                    "oi",
+                                    "a",
+                                    "o"
+                                ],
+            "correct"       :   "o",
+            "explanation"   :   "The right pronunciation is o",
+        },
+
+        
+{
+    "question"      :   "What is the pronunciation of the letter 'छ्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ca",
+                            "sa",
+                            "j",
+                            "ch"
+                        ],
+    "correct"       :   "ch",
+    "explanation"   :   "The right pronunciation is ch",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'ट् '? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ṭ ",
+                            "ḍh",
+                            "ṭh ",
+                            "th"
+                        ],
+    "correct"       :   "ṭ ",
+    "explanation"   :   "The right pronunciation is ṭ ",
+},
+        {
+            "question"      :   "What is the pronunciation of the letter 'औ'? ",
+            "image"         :   "",
+            "choices"       :   [
+                                    "au",
+                                    "ae",
+                                    "a",
+                                    "ai"
+                                ],
+            "correct"       :   "au",
+            "explanation"   :   "The right pronunciation is au",
+        },
+
+
+        {
+    "question"      :   "What is the pronunciation of the letter 'ध्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ḍh",
+                            "n",
+                            "dh",
+                            "th"
+                        ],
+    "correct"       :   "dh",
+    "explanation"   :   "The right pronunciation is dh",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'द्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "t",
+                            "de",
+                            "e",
+                            "d"
+                        ],
+    "correct"       :   "d",
+    "explanation"   :   "The right pronunciation is d",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'य्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "ya",
+                            "ye",
+                            "e",
+                            "y"
+                        ],
+    "correct"       :   "y",
+    "explanation"   :   "The right pronunciation is y",
+},
+{
+    "question"      :   "What is the pronunciation of the letter 'स्'? ",
+    "image"         :   "",
+    "choices"       :   [
+                            "s",
+                            "sa",
+                            "ss",
+                            "ṣ"
+                        ],
+    "correct"       :   "s",
+    "explanation"   :   "The right pronunciation is s",
+},
+
+
+
+
+        
+    ];
+
+    /*** No need to edit below this line ***/
+var currentquestion=0,score=0,submt=true,picked;jQuery(document).ready(function(e){function h(i){return e(document.createElement("div")).text(i).html()}function b(k){if(typeof k!=="undefined"&&e.type(k)=="array"){e("#choice-block").empty();for(var j=0;j<k.length;j++){e(document.createElement("li")).addClass("choice choice-box").attr("data-index",j).text(k[j]).appendTo("#choice-block")}}}function d(){submt=true;e("#explanation").empty();e("#question").text(quiz[currentquestion]["question"]);e("#pager").text("Question "+Number(currentquestion+1)+" of "+quiz.length);if(quiz[currentquestion].hasOwnProperty("image")&&quiz[currentquestion]["image"]!=""){if(e("#question-image").length==0){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"])).insertAfter("#question")}else{e("#question-image").attr("src",quiz[currentquestion]["image"]).attr("alt",h(quiz[currentquestion]["question"]))}}else{e("#question-image").remove()}b(quiz[currentquestion]["choices"]);c()}function f(i){if(quiz[currentquestion]["choices"][i]==quiz[currentquestion]["correct"]){e(".choice").eq(i).css({"background-color":"#50D943"});e("#explanation").html("<strong>Correct!</strong> "+h(quiz[currentquestion]["explanation"]));score++}else{e(".choice").eq(i).css({"background-color":"#D92623"});e("#explanation").html("<strong>Incorrect.</strong> "+h(quiz[currentquestion]["explanation"]))}currentquestion++;e("#submitbutton").html("NEXT QUESTION &raquo;").on("click",function(){if(currentquestion==quiz.length){a()}else{e(this).text("Check Answer").css({color:"#222"}).off("click");d()}})}function c(){e(".choice").on("mouseover",function(){e(this).css({"background-color":"#e1e1e1"})});e(".choice").on("mouseout",function(){e(this).css({"background-color":"#fff"})});e(".choice").on("click",function(){picked=e(this).attr("data-index");e(".choice").removeAttr("style").off("mouseout mouseover");e(this).css({"border-color":"#222","font-weight":700,"background-color":"#c1c1c1"});if(submt){submt=false;e("#submitbutton").css({color:"#000"}).on("click",function(){e(".choice").off("click");e(this).off("click");f(picked)})}})}function a(){e("#explanation").empty();e("#question").empty();e("#choice-block").empty();e("#submitbutton").remove();e("#question").text("You got "+score+" out of "+quiz.length+" correct.");e(document.createElement("h2")).css({"text-align":"center","font-size":"4em"}).text(Math.round(score/quiz.length*100)+"%").insertAfter("#question")}function g(){if(typeof quiztitle!=="undefined"&&e.type(quiztitle)==="string"){e(document.createElement("h1")).text(quiztitle).appendTo("#frame")}else{e(document.createElement("h1")).text("Quiz").appendTo("#frame")}if(typeof quiz!=="undefined"&&e.type(quiz)==="array"){e(document.createElement("p")).addClass("pager").attr("id","pager").text("Question 1 of "+quiz.length).appendTo("#frame");e(document.createElement("h2")).addClass("question").attr("id","question").text(quiz[0]["question"]).appendTo("#frame");if(quiz[0].hasOwnProperty("image")&&quiz[0]["image"]!=""){e(document.createElement("img")).addClass("question-image").attr("id","question-image").attr("src",quiz[0]["image"]).attr("alt",h(quiz[0]["question"])).appendTo("#frame")}e(document.createElement("p")).addClass("explanation").attr("id","explanation").html("&nbsp;").appendTo("#frame");e(document.createElement("ul")).attr("id","choice-block").appendTo("#frame");b(quiz[0]["choices"]);e(document.createElement("div")).addClass("choice-box").attr("id","submitbutton").text("Check Answer").css({"font-weight":700,color:"#222",padding:"30px 0"}).appendTo("#frame");c()}}g()});
+    </script>
+    <style type="text/css" media="all">
+        /*css reset */
+        html,body,div,span,h1,h2,h3,h4,h5,h6,p,code,small,strike,strong,sub,sup,b,u,i{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;} 
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;} 
+        body{line-height:1; font:normal 0.9em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;} 
+        ol,ul{list-style:none;}
+        strong{font-weight:700;}
+        #frame{max-width:620px;width:auto;border:1px solid rgb(212, 212, 212);background:#fff;padding:10px;margin:3px;}
+        h1{font:normal bold 2em/1.8em "Helvetica Neue", Helvetica, Arial, sans-serif;text-align:left;border-bottom:1px solid #999;padding:0;width:auto}
+        h2{font:italic bold 1.3em/1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;padding:0;text-align:center;margin:20px 0;}
+        p.pager{margin:5px 0 5px; font:bold 1em/1em "Helvetica Neue", Helvetica, Arial, sans-serif;color:#999;}
+        img.question-image{display:block;max-width:250px;margin:10px auto;border:1px solid #ccc;width:100%;height:auto;}
+        #choice-block{display:block;list-style:none;margin:0;padding:0;}
+        #submitbutton{background:#5e89ff;}
+        #submitbutton:hover{background:#599eff;}
+        #explanation{margin:0 auto;padding:20px;width:75%;}
+        .choice-box{display:block;text-align:center;margin:8px auto;padding:10px 0;border:1px solid #666;cursor:pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+    </style>
+</head>
+<body style="margin-left: 30%;">
+    <div id="frame" role="content"></div>
+</body>
+</html>
